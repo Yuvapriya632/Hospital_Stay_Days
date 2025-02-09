@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('/static/3.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #fff;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 1.1rem;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .form-container {
+            width: 50%;
+            max-width: 500px; /* Limit max width */
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            margin-top: 80px; /* Adjust for navbar height */
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            padding: 12px;
+            background-color: #0c0c0c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0d0e0d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>Prediction System</h1>
+        <a href="/logout">Logout</a>
+    </div>
+
+    <!-- Prediction Form -->
+    <div class="form-container">
+        <h2>Enter the Data for Prediction</h2>
+        <form action="/predict" method="POST">
+            <label for="City_Code_Hospital">City Code Hospital:</label>
+            <input type="number" id="City_Code_Hospital" name="City_Code_Hospital" required>
+
+            <label for="Hospital_code">Hospital Code:</label>
+            <input type="number" id="Hospital_code" name="Hospital_code" required>
+
+            <label for="Available_Extra_Rooms_in_Hospital">Available Extra Rooms:</label>
+            <input type="number" id="Available_Extra_Rooms_in_Hospital" name="Available_Extra_Rooms_in_Hospital" required>
+
+            <label for="Visitors_with_Patient">Visitors with Patient:</label>
+            <input type="number" id="Visitors_with_Patient" name="Visitors_with_Patient" required>
+
+            <label for="Admission_Deposit">Admission Deposit:</label>
+            <input type="number" id="Admission_Deposit" name="Admission_Deposit" required>
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
