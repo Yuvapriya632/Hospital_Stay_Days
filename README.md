@@ -39,8 +39,7 @@ Ensure you have **Python** installed on your system.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/Hospital_Stay.git
-   cd Hospital_Stay
+   https://github.com/Yuvapriya632/Hospital_Stay_Days
    ```
 
 2. Install dependencies:
